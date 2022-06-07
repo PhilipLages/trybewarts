@@ -3,7 +3,7 @@
   background-color: rgb(50, 167, 145);
 }
 
-.trybewarts-login{
+.trybewarts-login {
   display: flex;
   flex-direction: column;
 }
