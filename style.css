@@ -23,3 +23,11 @@
 #trybewarts-forms-logo{
   height: 500px;
 }
+
+#names{
+display:flex;
+}
+
+#lastname{
+  margin-left: 10px;
+}
