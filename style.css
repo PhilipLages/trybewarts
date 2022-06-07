@@ -47,3 +47,13 @@
 #label-content {
   margin-top: 10px;
 }
+
+#label-rate {
+  margin-top: 10px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
