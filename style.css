@@ -20,14 +20,26 @@
   flex-direction: column;
 }
 
-#trybewarts-forms-logo{
+#trybewarts-forms-logo {
   height: 500px;
 }
 
-#names{
-display:flex;
+#names {
+  display: flex;
 }
 
-#lastname{
+#lastname {
   margin-left: 10px;
+}
+
+#email {
+  display: flex;
+}
+
+#house {
+  margin-left: 10px;
+}
+
+#label-family {
+  margin-top: 10px;
 }
