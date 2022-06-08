@@ -28,28 +28,20 @@
   display: flex;
 }
 
-#lastname {
+.left {
   margin-left: 10px;
+}
+
+#house {
+  margin-left: 18px;
 }
 
 #email {
   display: flex;
 }
 
-#house {
-  margin-left: 10px;
-}
-
-#label-family {
-  margin-top: 10px;
-}
-
-#label-content {
-  margin-top: 10px;
-}
-
-#label-rate {
-  margin-top: 10px;
+.margin {
+  margin-top: 20px;
 }
 
 .row {
@@ -58,6 +50,6 @@
   justify-content: flex-end;
 }
 
-.textarea {
-  margin-top: 10px;
+.to-learn {
+  display: flex;
 }
