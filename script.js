@@ -16,9 +16,9 @@ function checkLogin(e) {
 
 formBtn.addEventListener('click', checkLogin);
 
-function checkAgreement(e) {
+const agreement = document.getElementById('agreement');
+
+agreement.addEventListener('click', (e) => {
   const submitBtn = document.querySelector('#submit-btn');
   submitBtn.disabled = !e.target.checked;
-}
-
-agreement.addEventListener('click', checkAgreement);
+});
