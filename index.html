@@ -18,7 +18,7 @@
     </form>
   </header>
   <main class="container margin" id="mainData">
-    <form action="" method="get" target="_self" id="evaluation-form">
+    <form action="" method="get" id="evaluation-form">
     <section id="names">
     <label>Nome:</label>
     <input type="text" name="name" id="input-name" placeholder="Nome">
@@ -104,8 +104,9 @@
       <input type="checkbox" name="agreement" id="agreement">
       <label id="label-infos" for="agreement">Você concorda com o uso das informações acima?</label>
     </section>
-    <button class="margin" type="submit" id="submit-btn" disabled>Enviar</button>
+    <button class="margin" type="submit" id="submit-btn" formtarget="_self" disabled>Enviar</button>
     </form>
+    <form action="" id="form-data"></form>
     <img src="images/trybewarts-colored.svg" id="trybewarts-forms-logo">
   </main>
   <footer>Direitos reservados à Trybewarts©</footer>

@@ -1,7 +1,6 @@
 const formBtn = document.getElementById('loginBtn');
 const emailLogin = document.getElementById('email');
 const password = document.getElementById('senha');
-const mainData = document.getElementById('mainData');
 
 function createNewTag(tag, element, value) {
   const createTag = document.createElement(tag);
@@ -36,29 +35,24 @@ textArea.addEventListener('input', () => {
 });
 
 const createFormOutput = () => {
-  mainData.appendChild(createNewTag('form', 'id', 'form-data'));
-  const formOutput = document.getElementById('form-data');
-  formOutput.appendChild(createNewTag('p', 'id', 'form-name'));
-  formOutput.appendChild(createNewTag('p', 'id', 'form-email'));
-  formOutput.appendChild(createNewTag('p', 'id', 'form-house'));
-  formOutput.appendChild(createNewTag('p', 'id', 'form-family'));
-  formOutput.appendChild(createNewTag('p', 'id', 'form-subjects'));
-  formOutput.appendChild(createNewTag('p', 'id', 'form-evaluation'));
-  formOutput.appendChild(createNewTag('p', 'id', 'form-obs'));
+  const ids = ['output-name', 'output-email', 'output-house', 'output-family', 'output-subjects',
+    'output-evaluation', 'output-obs'];
+  for (let id = 0; id < ids.length; id += 1) {
+    const formOutput = document.getElementById('form-data');
+    const setId = ids[id];
+    formOutput.appendChild(createNewTag('p', 'id', setId));
+  }
 };
 createFormOutput();
 
-// const email = document.getElementById('form-email');
-// const house = document.getElementById('form-house');
-// const family = document.getElementById('form-family');
-// const subjects = document.getElementById('form-subjects');
-// const evaluation = document.getElementById('form-evaluation');
-// const obs = document.getElementById('form-obs');
+// const house = document.getElementById('output-house');
+// const family = document.getElementById('output-family');
+// const subjects = document.getElementById('output-subjects');
+// const evaluation = document.getElementById('output-evaluation');
+// const obs = document.getElementById('output-obs');
 
 // const showFormOutput = () => {
-//   const inputName = document.querySelector('#input-name').value;
-//   const inputLName = document.querySelector('#input-lastname').value;
-//   const inputEmail = document.querySelector('#input-email').value;
+
 //   const inputHouse = document.querySelector('#house').value;
 //   const frontend = document.querySelector('#frontend').value;
 //   const backend = document.querySelector('#backend').value;
@@ -66,10 +60,15 @@ createFormOutput();
 //   const backend = document.querySelector('#backend').value;
 // }
 
-submitBtn.addEventListener('click', () => {
-  const name = document.getElementById('form-name');
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
   const form = document.querySelector('#evaluation-form');
-  form.innerHTML = ' ';
-  const formData = submitBtn.formTarget;
-  name.innerText = formData;
+  form.style.display = 'none';
+  const nameOutput = document.querySelector('#input-name').value;
+  const lNameOutput = document.querySelector('#input-lastname').value;
+  const name = document.getElementById('output-name');
+  name.innerText = `Nome: -${nameOutput}- -${lNameOutput}-`;
+  const emailOutput = document.querySelector('#input-email').value;
+  const email = document.getElementById('output-email');
+  email.innerText = `Email: -${emailOutput}-`;
 });
