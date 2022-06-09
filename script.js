@@ -67,3 +67,12 @@ submitBtn.addEventListener('click', () => {
   const formData = submitBtn.formTarget;
   name.innerText = formData;
 });
+
+let textArea = document.getElementById("textarea");
+
+textArea.addEventListener("input", function(){
+  let MaxCaracter = textArea.maxLength;
+  let typing = textArea.value.length;
+  document.getElementById("counter").innerHTML = (MaxCaracter - typing);
+});
+
