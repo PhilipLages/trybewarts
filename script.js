@@ -34,41 +34,85 @@ textArea.addEventListener('input', () => {
   document.getElementById('counter').innerText = `Caracteres restantes: ${MaxCaracter - typing}`;
 });
 
+const formOutput = document.getElementById('form-data');
 const createFormOutput = () => {
   const ids = ['output-name', 'output-email', 'output-house', 'output-family', 'output-subjects',
     'output-evaluation', 'output-obs'];
   for (let id = 0; id < ids.length; id += 1) {
-    const formOutput = document.getElementById('form-data');
     const setId = ids[id];
     formOutput.appendChild(createNewTag('p', 'id', setId));
   }
 };
 createFormOutput();
 
-// const house = document.getElementById('output-house');
-// const family = document.getElementById('output-family');
-// const subjects = document.getElementById('output-subjects');
-// const evaluation = document.getElementById('output-evaluation');
-// const obs = document.getElementById('output-obs');
+function printName() {
+  const nameOutput = document.querySelector('#input-name').value;
+  const lNameOutput = document.querySelector('#input-lastname').value;
+  const name = document.getElementById('output-name');
+  name.innerText = `Nome: ${nameOutput} ${lNameOutput}`;
+}
 
-// const showFormOutput = () => {
+function printEmail() {
+  const emailOutput = document.querySelector('#input-email').value;
+  const email = document.getElementById('output-email');
+  email.innerText = `Email: ${emailOutput}`;
+}
 
-//   const inputHouse = document.querySelector('#house').value;
-//   const frontend = document.querySelector('#frontend').value;
-//   const backend = document.querySelector('#backend').value;
-//   const fullstack = document.querySelector('#fullstack').value;
-//   const backend = document.querySelector('#backend').value;
-// }
+function printHouse() {
+  const house = document.querySelector('#house').value;
+  const outputHouse = document.getElementById('output-house');
+  outputHouse.innerText = `Casa: ${house}`;
+}
+
+function printFamily() {
+  const frontend = document.querySelector('#frontend');
+  const backend = document.querySelector('#backend');
+  const fullstack = document.querySelector('#fullstack');
+  const family = document.getElementById('output-family');
+  if (frontend.checked) {
+    family.innerText = `Família: ${frontend.value}`;
+  } else if (backend.checked) {
+    family.innerText = `Família: ${backend.value}`;
+  } else if (fullstack.checked) {
+    family.innerText = `Família: ${fullstack.value}`;
+  }
+}
+
+function printSubjects() {
+  const subjects = document.querySelectorAll('.subject');
+  const outputSubjects = document.getElementById('output-subjects');
+  let checked = '';
+  for (let subject = 0; subject < subjects.length; subject += 1) {
+    const whichSubject = subjects[subject];
+    if (whichSubject.checked) {
+      checked += `${whichSubject.value}, `;
+    }
+  }
+  const slicedChecked = checked.slice(0, -2);
+  outputSubjects.innerText = `Matérias: ${slicedChecked}`;
+}
+
+function printEvaluation() {
+  const evaluation = document.querySelectorAll('.rate');
+  const outputEvaluation = document.getElementById('output-evaluation');
+  for (let rate = 0; rate < evaluation.length; rate += 1) {
+    const whichRate = evaluation[rate];
+    if (whichRate.checked) {
+      outputEvaluation.innerText = `Avaliação: ${whichRate.value}`;
+    }
+  }
+}
+
+function printObs() {
+  const obs = document.querySelector('#textarea').value;
+  const outputObs = document.getElementById('output-obs');
+  outputObs.innerText = `Observações: ${obs}`;
+}
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
   const form = document.querySelector('#evaluation-form');
   form.style.display = 'none';
-  const nameOutput = document.querySelector('#input-name').value;
-  const lNameOutput = document.querySelector('#input-lastname').value;
-  const name = document.getElementById('output-name');
-  name.innerText = `Nome: -${nameOutput}- -${lNameOutput}-`;
-  const emailOutput = document.querySelector('#input-email').value;
-  const email = document.getElementById('output-email');
-  email.innerText = `Email: -${emailOutput}-`;
+  printName(); printEmail(); printHouse(); printFamily();
+  printSubjects(); printEvaluation(); printObs();
 });
