@@ -22,3 +22,12 @@ agreement.addEventListener('click', (e) => {
   const submitBtn = document.querySelector('#submit-btn');
   submitBtn.disabled = !e.target.checked;
 });
+
+let textArea = document.getElementById("textarea");
+
+textArea.addEventListener("input", function(){
+  let MaxCaracter = textArea.maxLength;
+  let typing = textArea.value.length;
+  document.getElementById("counter").innerHTML = (MaxCaracter - typing);
+});
+
