@@ -26,7 +26,14 @@ formBtn.addEventListener('click', checkLogin);
 const agreement = document.getElementById('agreement');
 const submitBtn = document.querySelector('#submit-btn');
 
-agreement.addEventListener('click', (e) => submitBtn.disabled = !e.target.checked);
+agreement.addEventListener('click', (e) => { submitBtn.disabled = !e.target.checked; });
+
+const textArea = document.getElementById('textarea');
+textArea.addEventListener('input', () => {
+  const MaxCaracter = textArea.maxLength;
+  const typing = textArea.value.length;
+  document.getElementById('counter').innerText = `Caracteres restantes: ${MaxCaracter - typing}`;
+});
 
 const createFormOutput = () => {
   mainData.appendChild(createNewTag('form', 'id', 'form-data'));
@@ -40,7 +47,6 @@ const createFormOutput = () => {
   formOutput.appendChild(createNewTag('p', 'id', 'form-obs'));
 };
 createFormOutput();
-
 
 // const email = document.getElementById('form-email');
 // const house = document.getElementById('form-house');
@@ -62,17 +68,8 @@ createFormOutput();
 
 submitBtn.addEventListener('click', () => {
   const name = document.getElementById('form-name');
-  const form = document.querySelector('#evaluation-form')
+  const form = document.querySelector('#evaluation-form');
   form.innerHTML = ' ';
   const formData = submitBtn.formTarget;
   name.innerText = formData;
 });
-
-let textArea = document.getElementById("textarea");
-
-textArea.addEventListener("input", function(){
-  let MaxCaracter = textArea.maxLength;
-  let typing = textArea.value.length;
-  document.getElementById("counter").innerHTML = (MaxCaracter - typing);
-});
-
