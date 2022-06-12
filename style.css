@@ -1,76 +1,122 @@
 @import url('http://fonts.cdnfonts.com/css/harry-potter');
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(imgs/hogwarts-wallpaper.jpg);
+  background-size: cover;
+}
 
 .header {
   display: flex;
   background-color: rgb(50, 167, 145);
   justify-content: space-between;
   align-items: center;
+  font-family: 'Harry Potter', sans-serif;
+}
+
+.trybewarts-header-logo {
+  margin-left: 10px;
+  width: 70px;
 }
 
 #trybewarts-header-title {
   font-family: Harry Potter, sans-serif;
-  font-size: 40px;
-  letter-spacing: 15px;
+  padding: 15px 0px 0px 0px;
 }
 
 .trybewarts-login {
+  margin-right: 10px;
   display: flex;
-  flex-direction: column;
+  width: 450px;
+  align-items: center;
+}
+
+.margin-top {
+  margin-top: 19px;
+}
+
+.margin-right {
+  margin-right: 5px;
+}
+
+.margin-left {
+  margin-left: 5px;
+}
+
+#main-data h2 {
+  font-family: Harry Potter, sans-serif;
 }
 
 .container {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
 }
 
 #evaluation-form {
-  display: flex;
-  width: 675px;
-  flex-direction: column;
+  font-family: Harry Potter, sans-serif;
+  width: 600px;
+  opacity: 90%;
+  padding: 10px;
   border: 3px solid rgb(50, 167, 145);
   border-radius: 5px;
+  background-color: lightgrey;
+}
+
+.email-house {
+  display: flex;
+  flex-direction: column;
+}
+
+.house-input-email {
+  display: flex;
+}
+
+#input-email{
+  width: 71%;
+}
+
+.container-family-subject {
+  display: flex;
+}
+
+.family {
+  width: 30%;
+}
+
+#textarea {
+  resize: none;
+  height: 150px;
+}
+
+#counter {
+  text-align: end;
 }
 
 #trybewarts-forms-logo {
-  height: 500px;
+  width: 40%;
+  opacity: 70%;
 }
 
-.trybewarts-header-logo {
-  height: 100px;
-}
-
-#names {
-  display: flex;
-}
-
-.left {
-  margin-left: 10px;
-}
-
-#house {
-  margin-left: 18px;
-}
-
-#email {
-  display: flex;
-}
-
-.margin {
-  margin-top: 20px;
-}
-
-.row {
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-}
-
-.to-learn {
-  display: flex;
+#form-data {
+  display: none;
+  background-image: url(imgs/letter.jpg);
+  background-size: cover;
+  padding: 20px;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 40px;
+  width: 100%;
 }
 
 footer {
   background-color: rgb(50, 167, 145);
   padding: 20px;
+  text-align: center;
+  font-family: Harry Potter, sans-serif;
+  font-size: 20px;
 }

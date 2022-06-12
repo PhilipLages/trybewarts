@@ -111,8 +111,10 @@ function printObs() {
 
 submitBtn.addEventListener('click', (e) => {
   e.preventDefault();
+  const outputLetter = document.querySelector('#form-data');
   const form = document.querySelector('#evaluation-form');
   form.style.display = 'none';
+  outputLetter.style.display = 'block';
   printName(); printEmail(); printHouse(); printFamily();
   printSubjects(); printEvaluation(); printObs();
 });
